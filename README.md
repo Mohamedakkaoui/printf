@@ -1,2 +1,3 @@
 # LBZNASA
-printf project
+$PRINTF PROJECT$
+our first project with a gladiator 
