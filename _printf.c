@@ -12,7 +12,6 @@ int _printf(const char *format, ...)
 {
   va_list print;
   int x;
-  char *a;
   char *b;
   va_start(print , format);
     if (format == NULL)
@@ -20,7 +19,7 @@ int _printf(const char *format, ...)
       return(-1);
     }
   
-   for (x = 0; format; x++)
+   for (x = 0; *format; x++)
     {
         if (*format != '%')
         {
@@ -29,23 +28,25 @@ int _printf(const char *format, ...)
         else
         {
           format++;
-        }
-        if (*format == 'c')
-        {
-          _putchar(va_arg(print, int));       
-        }
-        if (*format == 's')
-        {
-          b = va_arg(print, char *);
-          for (int i = 0; *b != '\0'; a++)
-          {
-              _putchar(*b);
-          }
-        }
-        if (*format == '%')
-        {
-          _putchar('%');
-        }
+        
+        	if (*format == 'c')
+        	{
+          		_putchar(va_arg(print, int));      
+        	}
+        	else if (*format == 's')
+        	{
+          		b = va_arg(print, char *);
+          	while (*b != '\0')
+          	{
+            		_putchar(*b);
+            		b++;
+          	}
+        	}
+        	else if(*format == '%')
+        	{
+          		_putchar('%');
+        	}
+	}
         format++;
     }
   va_end(print);
