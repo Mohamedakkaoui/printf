@@ -6,7 +6,7 @@
  *
  * @format : a character string
  *
- * Return : number of charcaters printed
+ *Return: number of charcaters printed
  */
 int _printf(const char *format, ...)
 {
@@ -14,10 +14,10 @@ int _printf(const char *format, ...)
 	int x;
 	char *b;
 
-	va_start(print , format);
+	va_start(print, format);
 	if (format == NULL)
 	{
-		return(-1);
+		return (-1);
 	}
 	for (x = 0; *format; x++)
 	{
@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 
 			if (*format == 'c')
 			{
-				_putchar(va_arg(print, int));      
+				_putchar(va_arg(print, int));
 			}
 			else if (*format == 's')
 			{
@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 					b++;
 				}
 			}
-			else if(*format == '%')
+			else if (*format == '%')
 			{
 				_putchar('%');
 			}
