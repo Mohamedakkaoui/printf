@@ -33,8 +33,7 @@ int _printf(const char *format, ...)
 				b = va_arg(print, char *);
 				while (*b != '\0')
 				{
-					_putchar(*b);
-					b++;
+					_putchar(*b++);
 				}
 			}
 			else if (*format == '%')
