@@ -24,7 +24,9 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
-			if (*format == 'c')
+			if (*format == '\0')
+				return(-1);
+			else if (*format == 'c')
 				_putchar(va_arg(print, int));
 			else if (*format == 's')
 			{
