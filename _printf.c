@@ -26,14 +26,13 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == 'c')
 				_putchar(va_arg(print, int));
-				x++;
 			else if (*format == 's')
 			{
 				i = 0;
 				b = va_arg(print, char *);
 				while (*b != '\0')
 				{
-					_putchar(*b);
+					_putchar(*b++);
 					i++;
 				}
 				x += (i - 1);
