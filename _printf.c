@@ -2,7 +2,7 @@
 #include <stdarg.h>
 #include <stddef.h>
 /**
- * _printf - function tat produces output according to a format
+ * _printf - function that produces output according to a format
  *
  * @format : a character string
  *
@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 
 	va_start(print, format);
 	if (format == NULL)
-		return (-1);
+		return (0);
 	for (x = 0; *format; x++)
 	{
 		if (*format != '%')
@@ -25,21 +25,28 @@ int _printf(const char *format, ...)
 		{
 			format++;
 
+			
 			if (*format == 'c')
 				_putchar(va_arg(print, int));
 			else if (*format == 's')
 			{
 				i  = 0;
 				b = va_arg(print, char *);
+				if (b == NULL)
+					break;
 				while (*b != '\0')
 				{
 					_putchar(*b++);
 					i++;
 				}
-				x += (i - 1);
+				x += i;
 			}
 			else if (*format == '%')
 				_putchar('%');
+			else
+			{
+				break;
+			}
 		}
 		format++;
 	}
