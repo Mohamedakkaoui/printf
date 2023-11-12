@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 				b = va_arg(print, char *);
 				if (b == NULL)
 					break;
-				while (*b != '\0') 
+				while (*b != '\0')
 					_putchar(*b++);
 					i++;
 				x += (i - 1);
