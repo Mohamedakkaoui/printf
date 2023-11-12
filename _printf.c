@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 			_putchar(*format);
 		else
 		{
-			format++;	
+			format++;
 			if (*format == 'c')
 				_putchar(va_arg(print, int));
 			else if (*format == 's')
@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 				b = va_arg(print, char *);
 				if (b == NULL)
 					break;
-				while (*b != '\0')
+				while (*b != '\0') 
 					_putchar(*b++);
 					i++;
 				x += (i - 1);
