@@ -30,19 +30,15 @@ int _printf(const char *format, ...)
 			{
 				i  = 0;
 				b = va_arg(print, char *);
-				if (b == NULL)
-					break;
 				while (*b != '\0')
+				{
 					_putchar(*b++);
 					i++;
+				}
 				x += (i - 1);
 			}
 			else if (*format == '%')
 				_putchar('%');
-			else
-			{
-				break;
-			}
 		}
 		format++;
 	}
