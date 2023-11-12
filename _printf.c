@@ -29,8 +29,8 @@ int _printf(const char *format, ...)
 				x++;
 			else if (*format == 's')
 			{
-				b = va_arg(print, char *);
 				i = 0;
+				b = va_arg(print, char *);
 				while (*b != '\0')
 				{
 					_putchar(*b);
