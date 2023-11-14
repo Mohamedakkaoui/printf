@@ -29,6 +29,8 @@ int _printf(const char *format, ...)
 					x++;
 					break;
 				default:
+					_putchar('%');
+					_putchar(*fromat);
 					break;
 			}
 		}
