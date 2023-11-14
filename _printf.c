@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * _printf - function that produces output according to a format
  * @format: a character string
@@ -5,51 +6,39 @@
  */
 int _printf(const char *format, ...)
 {
+	int x;
 	va_list print;
-	int x, y;
-	char *b;
-
+	
+	x = 0;
 	va_start(print, format);
-	if (format == NULL)
-		return (-1);
-	for (x = 0; *format; x++)
+	while (*format != '\0')
 	{
-		if (*format != '%')
-			_putchar(*format);
-		else
+		if (*format == '%')
 		{
 			format++;
-			if (*format == '\0')
-				return (-1);
-			else if (*format == 'c')
-				_putchar(va_arg(print, int));
-			else if (*format == 'd')
-				_putchar(va_arg(print, int));
-			else if (*format == 'i')
-				_putchar(va_arg(print, int));
-			else if (*format == 's')
+			switch (*format)
 			{
-				y = 0;
-				b = va_arg(print, char *);
-				while (*b != '\0')
-				{
-					_putchar(*b++);
-					y++;
-				}
-				x += (y - 1);
+				case 'c':
+					x += print_char(print);
+					break;
+				case 's':
+					x += print_string(print);
+					break;
+				case '%':
+					_putchar('%');
+					x++;
+					break;
+				default:
+					break;
 			}
-			else if (*format == '%')
-			{
-				_putchar('%');
-			}
-			else
-			{
-				va_end(print);
-				return (-1);
-			}
+		}
+		else
+		{
+			_putchar(*format);
+			x++;
+		}
 		format++;
 	}
 	va_end(print);
 	return (x);
 }
-
