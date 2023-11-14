@@ -29,14 +29,15 @@ int _printf(const char *format, ...)
 					x++;
 					break;
 				default:
+					_putchar('%');
+					_putchar(*format);
+					x += 2;
 					break;
 			}
 		}
 		else
-		{
 			_putchar(*format);
 			x++;
-		}
 		format++;
 	}
 	va_end(print);
