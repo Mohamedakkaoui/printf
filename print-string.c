@@ -3,7 +3,7 @@
 /**
  * print_string - function tht rprints a string
  *@arguments
- *Return: return the length of the string
+ *Return: the length of the string
  */
 int print_string(char *str)
 {
