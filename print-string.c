@@ -5,27 +5,27 @@
  *@arguments
  *Return: return the length of the string
  */
-int print_string(va_list print)
+int print_string(char *str)
 {
-	char *str;
-	int i;
+	int i, len;
 
-	str = va_arg(print, char *);
 	if (str == NULL)
 	{
 		str = "(null)";
-		for (i = 0; str[i] != '\0'; i++)
+		len = _strlen(str);
+		for (i = 0; i < len; i++)
 		{
 			_putchar(str[i]);
 		}
-		return (i);
+		return (len);
 	}
 	else
 	{
-		for (i = 0; str[i] != '\0'; i++)
+		len = _strlen(str);
+		for (i = 0; i < len; i++)
 		{
 			_putchar(str[i]);
 		}
-		return (i);
+		return (len);
 	}
 }
