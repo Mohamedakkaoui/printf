@@ -1,6 +1,11 @@
 #include "main.h"
 #include <stddef.h>
 #include <stdarg.h>
+/**
+ * _printf - funciton that produces output according to format
+ * @format : charcater string
+ *Return: number of charcaters printed
+ */
 int _printf(const char *format, ...)
 {
 	int count = 0, i;
