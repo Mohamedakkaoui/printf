@@ -25,6 +25,10 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i] == '%' && format[i + 1] != ' ')
 		{
+			i += 2;
+		}
+		else if (format[i] == '%' && format[i + 1] != ' ')
+		{
 			switch (format[i + 1])
 			{
 				case 'c':
@@ -42,9 +46,6 @@ int _printf(const char *format, ...)
 			}
 			i += 2;
 		}
-		else
-			i += 2;
-
 	}
 	va_end(data);
 	return (count);
