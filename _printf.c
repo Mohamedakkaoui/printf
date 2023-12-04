@@ -42,6 +42,9 @@ int _printf(const char *format, ...)
 			}
 			i += 2;
 		}
+		else
+			i += 2;
+
 	}
 	va_end(data);
 	return (count);
