@@ -24,9 +24,7 @@ int _printf(const char *format, ...)
 			i++;
 		}
 		else if (format[i] == '%' && format[i + 1] != ' ')
-		{
 			i += 2;
-		}
 		else if (format[i] == '%' && format[i + 1] != ' ')
 		{
 			switch (format[i + 1])
